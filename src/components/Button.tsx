@@ -1,9 +1,16 @@
 import React from 'react'
 
-const Button = (props:any) => {
+const testFunc = function (value:string): void{
+    console.log('Hello World')
+    console.log(value)
+  }
+    
+
+const Button = (props: any) => {
+    const { buttonText} = props;
     return (
         <div>
-            <button>{props.buttonText}</button>
+            <button onClick={()=>testFunc('Pepis')}>{buttonText}</button>
         </div>
     )
 }
