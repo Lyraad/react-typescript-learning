@@ -1,39 +1,40 @@
 import React from "react";
 import AddMessage from "./AddMessage";
 import Message from "./Message";
+import { useState } from "react";
 
-interface message {
-  id: number;
-  timestamp: string;
-  messageContent: string;
-  author?: string;
+interface messageSend {
+  messageText: string;
+  messageAuthor: string;
 }
 
-let messageData: message[];
-
-messageData = [
-  { id: 1, timestamp: "test", messageContent: "Hello World", author: "System" },
-  {
-    id: 2,
-    timestamp: "another",
-    messageContent: "Hello again",
-    author: "Daryl",
-  },
-  { id: 3, timestamp: "ignore", messageContent: "STOP SAYING HELLO!" },
-];
-
-// let addPost = function (postContent: string): void {
-//   let newPost = {
-//     id: Math.floor(Math.random() * 100000),
-//     timestamp: "ignoreme",
-//     messageContent: postContent,
-//     author: "system",
-//   };
-//   let newData = [...messageData, newPost];
-//   messageData = newData;
-// };
-
 function MessageBoard() {
+  const [messageData, updateMessageData] = useState([
+    {
+      id: 1,
+      timestamp: "test",
+      messageContent: "Hello World",
+      author: "System",
+    },
+    {
+      id: 2,
+      timestamp: "another",
+      messageContent: "Hello again",
+      author: "Daryl",
+    },
+    { id: 3, timestamp: "ignore", messageContent: "STOP SAYING HELLO!" },
+  ]);
+
+  let addPost = function (messageSend: messageSend): void {
+    let newPost = {
+      id: Math.floor(Math.random() * 100000),
+      timestamp: "ignoreme",
+      messageContent: messageSend.messageText,
+      author: messageSend.messageAuthor,
+    };
+    updateMessageData([...messageData, newPost]);
+  };
+
   return (
     <>
       <table style={{ margin: "auto" }}>
@@ -52,7 +53,7 @@ function MessageBoard() {
         </tbody>
       </table>
       <br />
-      <AddMessage />
+      <AddMessage addPost={addPost} />
     </>
   );
 }
