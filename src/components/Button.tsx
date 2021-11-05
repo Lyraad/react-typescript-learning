@@ -1,10 +1,16 @@
 import React from "react";
 
-const Button = (props: any) => {
-  const { buttonText, testFunc } = props;
+interface props {
+  buttonText: string;
+  testFunc(input: string): string;
+}
+
+const Button = ({ buttonText, testFunc }: props) => {
   return (
     <div>
-      <button onClick={() => testFunc("Pepis")}>{buttonText}</button>
+      <button onClick={() => console.log(testFunc("TEST2"))}>
+        {buttonText}
+      </button>
     </div>
   );
 };

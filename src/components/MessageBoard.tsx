@@ -13,7 +13,12 @@ let messageData: message[];
 
 messageData = [
   { id: 1, timestamp: "test", messageContent: "Hello World", author: "System" },
-  { id: 2, timestamp: "another", messageContent: "Hello again" },
+  {
+    id: 2,
+    timestamp: "another",
+    messageContent: "Hello again",
+    author: "Daryl",
+  },
   { id: 3, timestamp: "ignore", messageContent: "FOOOOO BAAAARR" },
 ];
 
@@ -31,9 +36,21 @@ messageData = [
 function MessageBoard() {
   return (
     <>
-      {messageData.map((post) => (
-        <Message key={post.id} content={post.messageContent} />
-      ))}
+      <table style={{ marginLeft: "20px" }}>
+        <tbody>
+          <tr>
+            <th style={{ width: "500px" }}>Message</th>
+            <th>Author</th>
+          </tr>
+          {messageData.map((post) => (
+            <Message
+              key={post.id}
+              content={post.messageContent}
+              author={post.author}
+            />
+          ))}
+        </tbody>
+      </table>
 
       <AddMessage />
     </>
