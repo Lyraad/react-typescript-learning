@@ -3,16 +3,17 @@ import "./App.css";
 import Header from "./components/Header";
 import Button from "./components/Button";
 import MessageBoard from "./components/MessageBoard";
-
-const testFunc = function (input: string): string {
-  let output = `Button clicked - ${input}`;
-  testVar = "MODIFIED";
-  return output;
-};
-
-let testVar = "Debug text";
+import { useState } from "react";
 
 function App() {
+  const [testVar, updateTestVar] = useState("Initial value");
+
+  const testFunc = function (input: string): string {
+    let output = `Button clicked - ${input}`;
+    updateTestVar("Modified");
+    return output;
+  };
+
   return (
     <div className="App">
       <Header content="Property Header" />
