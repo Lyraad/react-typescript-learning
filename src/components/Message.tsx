@@ -1,12 +1,11 @@
 import React from "react";
 
-function Message() {
-  return (
-    <div>
-      TEST hello more JSX here
-      <p> pepis</p>
-    </div>
-  );
+interface props {
+  content: string;
+}
+
+function Message({ content }: props) {
+  return <h3>{content}</h3>;
 }
 
 export default Message;

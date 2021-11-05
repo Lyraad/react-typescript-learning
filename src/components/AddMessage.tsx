@@ -1,6 +1,7 @@
 import React from "react";
 
 function AddMessage() {
+  // const {addPost} = props;
   return (
     <>
       <form action="submit">
