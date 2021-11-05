@@ -18,6 +18,7 @@ function App() {
       <Header content="Property Header" />
       <Button buttonText="HELLO WORLD" testFunc={testFunc} />
       {testVar}
+      <hr />
       <MessageBoard />
     </div>
   );

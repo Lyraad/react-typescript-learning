@@ -19,7 +19,7 @@ messageData = [
     messageContent: "Hello again",
     author: "Daryl",
   },
-  { id: 3, timestamp: "ignore", messageContent: "FOOOOO BAAAARR" },
+  { id: 3, timestamp: "ignore", messageContent: "STOP SAYING HELLO!" },
 ];
 
 // let addPost = function (postContent: string): void {
@@ -36,7 +36,7 @@ messageData = [
 function MessageBoard() {
   return (
     <>
-      <table style={{ marginLeft: "20px" }}>
+      <table style={{ margin: "auto" }}>
         <tbody>
           <tr>
             <th style={{ width: "500px" }}>Message</th>
@@ -51,7 +51,7 @@ function MessageBoard() {
           ))}
         </tbody>
       </table>
-
+      <br />
       <AddMessage />
     </>
   );
