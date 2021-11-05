@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const Header = () => {
-    return (
-        <div>
-            <h1>I am a typescript react headear</h1>
-        </div>
-    )
+interface props {
+  content: string;
 }
 
-export default Header
+const Header = ({ content }: props) => {
+  return (
+    <div>
+      <h1>{content}</h1>
+    </div>
+  );
+};
+
+export default Header;
