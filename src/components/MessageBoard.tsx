@@ -25,7 +25,7 @@ function MessageBoard() {
     { id: 3, timestamp: "ignore", messageContent: "STOP SAYING HELLO!" },
   ]);
 
-  let addPost = function (messageSend: messageSend): void {
+  const addPost = function (messageSend: messageSend): void {
     let newPost = {
       id: Math.floor(Math.random() * 100000),
       timestamp: "ignoreme",
@@ -35,6 +35,11 @@ function MessageBoard() {
     updateMessageData([...messageData, newPost]);
   };
 
+  const deleteMessage = function (id: number): void {
+    console.log(id);
+    updateMessageData(messageData.filter((message) => message.id !== id));
+  };
+
   return (
     <>
       <table style={{ margin: "auto" }}>
@@ -42,12 +47,15 @@ function MessageBoard() {
           <tr>
             <th style={{ width: "500px" }}>Message</th>
             <th>Author</th>
+            <th>Delete</th>
           </tr>
           {messageData.map((post) => (
             <Message
               key={post.id}
+              id={post.id}
               content={post.messageContent}
               author={post.author}
+              deleteMessage={deleteMessage}
             />
           ))}
         </tbody>

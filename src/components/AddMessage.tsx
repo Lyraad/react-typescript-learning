@@ -14,7 +14,7 @@ function AddMessage({ addPost }: props) {
   const [MessageText, setMessageText] = useState("");
   const [MessageAuthor, setMessageAuthor] = useState("");
 
-  const sendPost = function (e: React.FormEvent) {
+  const sendPost = function (e: React.FormEvent): void {
     e.preventDefault();
     if (MessageText) {
       let sendData: messageSend;
