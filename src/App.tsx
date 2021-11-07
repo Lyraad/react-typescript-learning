@@ -1,20 +1,34 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes as Switch,
+} from "react-router-dom";
 
-import Header from "./components/Header";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import AddPost from "./routes/AddPost";
+import DelPost from "./routes/DelPost";
 import Navbar from "./components/Navbar";
-import MessageBoard from "./components/MessageBoard";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="App">
-      <Header content="Message Board" />
-      <hr />
-      <Navbar />
-      <hr />
-      <MessageBoard editMode={true} />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <hr />
+        <Navbar />
+        <hr />
+        <Switch>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/addPost" element={<AddPost />} />
+          <Route path="/delPost" element={<DelPost />} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

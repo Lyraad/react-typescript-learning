@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavButton.css";
+import { Link } from "react-router-dom";
 
 interface props {
   pageName: string;
@@ -16,9 +17,11 @@ function NavButton({ isActivePage, pageName, linkTo }: props) {
 
   return (
     <>
-      <button className={btnClass} onClick={handleClick}>
-        {pageName}
-      </button>
+      <Link to={linkTo}>
+        <button className={btnClass} onClick={handleClick}>
+          {pageName}
+        </button>
+      </Link>
     </>
   );
 }
