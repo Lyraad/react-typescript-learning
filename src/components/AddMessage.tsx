@@ -31,9 +31,9 @@ function AddMessage({ addPost }: props) {
   };
 
   return (
-    <>
-      <form action="submit" onSubmit={sendPost}>
-        <label htmlFor="Message">Message:</label>
+    <div className="formContainer">
+      <form className="formElement" action="submit" onSubmit={sendPost}>
+        <label>Message:</label>
         <input
           id="Message"
           value={MessageText}
@@ -42,8 +42,9 @@ function AddMessage({ addPost }: props) {
             //Test using old style function
             setMessageText(e.target.value);
           }}
-        />
-        <label htmlFor="Author">Author (Optional):</label>
+        />{" "}
+        <br />
+        <label>Author (Optional):</label>
         <input
           id="Author"
           value={MessageAuthor}
@@ -52,12 +53,13 @@ function AddMessage({ addPost }: props) {
             setMessageAuthor(e.target.value)
           }
         />
+        <br />
         {
           //on change using arrow function for comparison
         }
         <button>Submit</button>
       </form>
-    </>
+    </div>
   );
 }
 export default AddMessage;

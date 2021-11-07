@@ -1,7 +1,12 @@
-import React from "react";
+// import AddMessage from "../components/AddMessage";
 
 function AddPost() {
-  return <div>ADDPOOST</div>;
+  return (
+    <>
+      {/* <AddMessage addPost="" /> */}
+      TEST
+    </>
+  );
 }
 
 export default AddPost;
