@@ -1,5 +1,5 @@
 import "./NavButton.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface props {
   pageName: string;
@@ -8,19 +8,24 @@ interface props {
 }
 
 function NavButton({ isActivePage, pageName, linkTo }: props) {
+  const navigate = useNavigate();
   let btnClass = isActivePage ? "active" : "inactive";
 
   const handleClick = function (): void {
-    console.log(linkTo);
+    if (
+      window.confirm(
+        "Warning! Data does not currently persist and will be erased. Do you want to continue?"
+      )
+    ) {
+      navigate(linkTo);
+    }
   };
 
   return (
     <>
-      <Link to={linkTo}>
-        <button className={btnClass} onClick={handleClick}>
-          {pageName}
-        </button>
-      </Link>
+      <button className={btnClass} onClick={handleClick}>
+        {pageName}
+      </button>
     </>
   );
 }
