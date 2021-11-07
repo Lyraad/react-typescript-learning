@@ -1,10 +1,10 @@
 # React/TypeScript Learning Project - Message Board
 
-      A test message board app in ReactJS using TypeScript and using React-Router-DOM
+A test message board app in ReactJS using TypeScript and using React-Router-DOM
 
-      Data stored in App state so does not persist yet, working on storing locally using hooks in short term
+Data stored in App state so does not persist yet, working on storing locally using hooks in short term
 
-      In long term looking to adapt a version to test and play with a Node/Express/Mongo Back-end to practice a full MERN stack
+In long term looking to adapt a version to test and play with a Node/ExpressMongo Back-end to practice a full MERN stack
 
 ## Available Scripts
 
