@@ -1,7 +1,19 @@
+.active,
+.inactive {
+  font-size: x-large;
+  margin-inline: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
 .active {
   background-color: green;
 }
 
 .inactive {
   background-color: red;
+}
+
+.inactive:hover {
+  background-color: cyan;
 }

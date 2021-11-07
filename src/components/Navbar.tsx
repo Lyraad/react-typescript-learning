@@ -4,10 +4,14 @@ import NavButton from "./NavButton";
 function Navbar() {
   return (
     <div>
-      <NavButton page="Home" isActivePage={true} />
-      <NavButton page="Add Post" isActivePage={false} />
-      <NavButton page="Delete Posts" isActivePage={false} />
-      <NavButton page="About" isActivePage={false} />
+      <NavButton pageName="Home" isActivePage={true} linkTo="/" />
+      <NavButton pageName="Add Post" isActivePage={false} linkTo="addPost" />
+      <NavButton
+        pageName="Delete Posts"
+        isActivePage={false}
+        linkTo="delPost"
+      />
+      <NavButton pageName="About" isActivePage={false} linkTo="about" />
     </div>
   );
 }

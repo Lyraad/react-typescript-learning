@@ -2,16 +2,23 @@ import React from "react";
 import "./NavButton.css";
 
 interface props {
-  page: string;
+  pageName: string;
+  linkTo: string;
   isActivePage: boolean;
 }
 
-function NavButton({ isActivePage, page }: props) {
+function NavButton({ isActivePage, pageName, linkTo }: props) {
   let btnClass = isActivePage ? "active" : "inactive";
+
+  const handleClick = function (): void {
+    console.log(linkTo);
+  };
 
   return (
     <>
-      <button className={btnClass}> {page} </button>
+      <button className={btnClass} onClick={handleClick}>
+        {pageName}
+      </button>
     </>
   );
 }
