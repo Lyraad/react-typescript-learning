@@ -54,6 +54,7 @@ td {
   width: 100%;
   clear: both;
   background-color: gray;
+  color: white;
 }
 
 .formElement button {
