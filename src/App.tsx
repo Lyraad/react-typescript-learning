@@ -1,27 +1,34 @@
 import React from "react";
 import "./App.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes as Switch,
+} from "react-router-dom";
+
+import Home from "./routes/Home";
+import About from "./routes/About";
+import AddPost from "./routes/AddPost";
+import DelPost from "./routes/DelPost";
+import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import Button from "./components/Button";
-import MessageBoard from "./components/MessageBoard";
-import { useState } from "react";
 
 function App() {
-  const [testVar, updateTestVar] = useState("Initial value");
-
-  const testFunc = function (input: string): string {
-    let output = `Button clicked - ${input}`;
-    updateTestVar("Modified");
-    return output;
-  };
-
   return (
-    <div className="App">
-      <Header content="Property Header" />
-      <Button buttonText="HELLO WORLD" testFunc={testFunc} />
-      {testVar}
-      <hr />
-      <MessageBoard />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <hr />
+        <Navbar />
+        <hr />
+        <Switch>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/addPost" element={<AddPost />} />
+          <Route path="/delPost" element={<DelPost />} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
