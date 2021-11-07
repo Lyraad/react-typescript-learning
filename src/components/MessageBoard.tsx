@@ -8,7 +8,11 @@ interface messageSend {
   messageAuthor: string;
 }
 
-function MessageBoard() {
+interface props {
+  editMode: boolean;
+}
+
+function MessageBoard({ editMode }: props) {
   const [messageData, updateMessageData] = useState([
     {
       id: 1,
@@ -40,6 +44,8 @@ function MessageBoard() {
     updateMessageData(messageData.filter((message) => message.id !== id));
   };
 
+  let deleteHeader = editMode ? <th>Delete</th> : "";
+
   return (
     <>
       <table style={{ margin: "auto" }}>
@@ -47,7 +53,7 @@ function MessageBoard() {
           <tr>
             <th style={{ width: "500px" }}>Message</th>
             <th>Author</th>
-            <th>Delete</th>
+            {deleteHeader}
           </tr>
           {messageData.map((post) => (
             <Message
@@ -56,6 +62,7 @@ function MessageBoard() {
               content={post.messageContent}
               author={post.author}
               deleteMessage={deleteMessage}
+              editMode={editMode}
             />
           ))}
         </tbody>

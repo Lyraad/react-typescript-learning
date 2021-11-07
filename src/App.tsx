@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header content="Message Board" />
       <hr />
-      <MessageBoard />
+      <MessageBoard editMode={true} />
     </div>
   );
 }
