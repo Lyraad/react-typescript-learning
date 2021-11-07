@@ -1,9 +1,4 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
-
-interface props {
-  content: string;
-}
 
 const Header = () => {
   const location = useLocation();

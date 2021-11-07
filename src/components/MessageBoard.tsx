@@ -44,15 +44,15 @@ function MessageBoard({ editMode }: props) {
     updateMessageData(messageData.filter((message) => message.id !== id));
   };
 
-  let deleteHeader = editMode ? <th>Delete</th> : "";
+  let deleteHeader = editMode ? <th style={{ width: "100px" }}>Delete</th> : "";
 
   return (
     <>
-      <table style={{ margin: "auto" }}>
+      <table className="messageTable">
         <tbody>
           <tr>
-            <th style={{ width: "500px" }}>Message</th>
-            <th>Author</th>
+            <th>Message</th>
+            <th style={{ width: "100px" }}>Author</th>
             {deleteHeader}
           </tr>
           {messageData.map((post) => (
